@@ -52,7 +52,7 @@ function Home() {
   const [state, dispatch] = useReducer(reducer, defaultState);
   const history = useHistory();
   const dispatcher = useDispatch();
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     if (
@@ -61,6 +61,7 @@ function Home() {
     ) {
       history.push("./dashboard");
       dispatcher(authenticated());
+      localStorage.setItem("id",JSON.stringify(defaultState))
     } else {
       dispatch({ type: "INVALID_DETAILS" });
       setUserName("");

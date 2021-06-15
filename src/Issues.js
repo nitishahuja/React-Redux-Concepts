@@ -8,9 +8,7 @@ function Issues() {
   const [searchData, setSearchData] = useState("");
 
   const fetchData = () => {
-    fetch(
-      "https://api.github.com/repos/vmg/redcarpet/issues?&access_token=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"
-    )
+    fetch("https://api.github.com/repos/vmg/redcarpet/issues?")
       .then((response) => response.json())
       .then((data) => {
         const sortedData = sortData(data);
