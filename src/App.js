@@ -7,9 +7,11 @@ import {
 } from "react-router-dom";
 import Issues from "./Issues";
 import Dashboard from "./Dashboard.js";
+import Data from "./Data.js";
 import Home from "./Home.js";
 import { useSelector, useDispatch } from "react-redux";
 import { authenticated } from "./actions";
+import Books from "./Components/Books";
 import "./App.css";
 
 function App() {
@@ -38,6 +40,12 @@ function App() {
           </Route>
           <Route path="/issues" component={Issues}>
             {isLogged ? <Issues /> : <Redirect to="/" />}
+          </Route>
+          <Route path="/books" component={Books}>
+            {isLogged ? <Books /> : <Redirect to="/" />}
+          </Route>
+          <Route path="/data/:number" component={Data}>
+            {isLogged ? <Data /> : <Redirect to="/" />}
           </Route>
         </Switch>
       </div>

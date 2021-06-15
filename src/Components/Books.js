@@ -1,24 +1,25 @@
 import React, { useEffect } from "react";
+import { books } from "./../assets/bookData";
 
 function Books() {
-  const fetchData = () => {
-    //   AIzaSyA6QIZVUxJlJzwKBuBxrGZay9RdXdAPeQQ;
-    fetch("http://openlibrary.org/people/george08/lists.json")
-      .then((response) => {
-        console.log(response);
-        return response.json();
-      })
-      .then((data) => {
-        console.log(data);
-      });
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
   return (
-    <div>
-      <h2>Books</h2>
+    <div className="bookList">
+      {books.map((book) => {
+        return (
+          <div className="book" key={book.id}>
+            <div className="book_right">
+              <img src={book.img} alt="bookCover" />
+            </div>
+            <div className="book_center">
+              <h2>{book.name}</h2>
+              <h5>By {book.auther}</h5>
+            </div>
+            <div className="book_left">
+              <button>Checkout on Amazon</button>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }

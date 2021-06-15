@@ -162,6 +162,13 @@ table tr:nth-of-type(even) {
   letter-spacing: 0.2rem;
 }
 
+.container--2 a {
+  color: rgb(253, 253, 253);
+  text-decoration: none;
+  letter-spacing: 0.1rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
 .container--3 .header {
   margin-top: 10px;
   display: flex;
@@ -240,4 +247,52 @@ table tr:nth-of-type(even) {
   border-radius: 5px;
   background-color: cornflowerblue;
   color: white;
+}
+
+.bookList {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: auto;
+  /* padding: 20px; */
+}
+
+.bookList .book {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid black;
+  height: 20vh;
+}
+
+.bookList .book .book_right img {
+  height: 18vh;
+  margin-left: 20px;
+}
+
+.bookList .book h2,
+.bookList .book .h5 {
+  margin-right: 20px;
+  text-align: right;
+}
+
+.bookList .book .book_left button {
+  display: inline-block;
+  background: hsl(205, 78%, 60%);
+  color: #fff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.25rem;
+  border-color: transparent;
+  text-transform: capitalize;
+  font-size: 1rem;
+  /* letter-spacing: 0.1rem;
+   margin-top: 2rem;
+  margin-left: 0.5rem;*/
+  margin-right: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s linear;
 }
