@@ -1,38 +1,243 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background: rgb(247, 243, 243);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.MuiContainer-root {
+  background-color: white;
+  width: 80% !important;
+  height: 80%;
+  border-radius: 5px;
+  border: 1px solid black;
+  align-items: center;
+  margin-bottom: auto;
+}
+.MuiContainer-root .MuiButton-fullWidth {
+  margin-top: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.MuiContainer-root .MuiButton-containedPrimary {
+  background-color: #1f32a0;
+  font-weight: bolder;
+  text-transform: capitalize;
+}
+
+.data {
+  align-content: center;
+}
+
+.form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background: rgb(250, 250, 250);
+  max-width: 450px;
+  margin: auto;
+  margin-bottom: 4rem;
+  padding: 40px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+.form h1 {
+  letter-spacing: 0.2rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.form h2 {
+  position: relative;
+}
+
+.form input {
+  background: hsl(210, 36%, 96%);
+  border-color: transparent;
+  border-radius: 0.25rem;
+  border: 1px solid black;
+  margin: 5px;
+  font-weight: bolder;
+  font-size: larger;
+  padding: 0.25rem 0.5rem;
+}
+
+.btn {
+  display: inline-block;
+  background: hsl(205, 78%, 60%);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.25rem;
+  border: 1px solid black;
+  border-color: transparent;
+  text-transform: capitalize;
+  font-size: larger;
+  font-weight: bolder;
+  letter-spacing: 0.01rem;
+  margin-top: 2rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+.btn:hover {
+  background: darkblue;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.App {
+  text-align: center;
+  padding: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.data table {
+  width: 90%;
+  margin: 10px auto;
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 10px;
+  background: #f3f2f8;
+  overflow: scroll;
+  height: 400px;
+  color: #000000;
+}
+table tr {
+  display: flex;
+  justify-content: space-between;
+}
+
+table td {
+  text-align: right;
+  padding: 0.5rem;
+}
+
+table tr:nth-of-type(odd) {
+  background: #f3f2f8;
+}
+table tr:nth-of-type(even) {
+  background: #e5e3ee;
+}
+
+.modal {
+  border-radius: 2px;
+  margin-top: 10px;
+}
+
+.modal p {
+  padding: 5px;
+  color: red;
+  letter-spacing: 0.01rem;
+}
+
+.item {
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  max-width: var(--fixed-width);
+  margin: 2rem auto;
+  align-items: center;
+  border-radius: var(--radius);
+  padding: 1rem 2rem;
+}
+
+.tableBody {
+  color: white;
+}
+
+.container--1 {
+  width: 90%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.container--3 {
+  width: 100%;
+  margin: auto;
+}
+
+.container--1 h2,
+.container--1 h4 {
+  color: coral;
+  letter-spacing: 0.2rem;
+}
+
+.container--3 .header {
+  margin-top: 10px;
+  display: flex;
+  width: 90%;
+  margin: auto;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+  letter-spacing: 0.2rem;
+}
+
+/* .container--3 input {
+  border-radius: 8px;
+  border: 1px solid black;
+  padding: 5px;
+} */
+
+.container--2 {
+  background-color: teal;
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  margin: auto;
+  border-radius: 5px;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.container--2 h2 {
+  margin-left: 10px;
+  text-decoration: teal;
+  letter-spacing: 0.2rem;
+}
+
+.container--2 button {
+  cursor: pointer;
+  margin-right: 10px;
+  background: hsl(205, 78%, 60%);
+  color: rgb(236, 226, 226);
+  padding: 10px;
+  border-radius: 0.25rem;
+  border: 1px solid black;
+  color: black;
+}
+
+.container--3 .MuiTableContainer-root {
+  width: 90%;
+  padding: 10px 0px 10px 0;
+  margin: auto;
+  border-radius: 10px;
+  border: 1px solid black;
+  background: #e6e6e6;
+}
+
+.MuiTableContainer-root .MuiTable-root {
+  margin: auto !important;
+  height: 60vh;
+  background-color: transparent;
+}
+
+.MuiTableContainer-root .MuiTableRow-root {
+  background-color: transparent !important;
+}
+
+.data .header {
+  margin: auto;
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.data .header button {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: cornflowerblue;
+  color: white;
 }
