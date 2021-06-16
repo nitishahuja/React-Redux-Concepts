@@ -45,7 +45,7 @@ function App() {
             {isLogged ? <Books /> : <Redirect to="/" />}
           </Route>
           <Route path="/data/:number" component={Data}>
-            {isLogged ? <Data /> : <Redirect to="/" />}
+            <Redirect to="/" />
           </Route>
         </Switch>
       </div>

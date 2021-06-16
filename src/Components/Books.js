@@ -10,7 +10,6 @@ function Books() {
       onDragEnd={(param) => {
         const srcIndex = param.source.index;
         const destIndex = param.destination.index;
-        console.log(param);
         bookList.splice(destIndex, 0, bookList.splice(srcIndex, 1)[0]);
       }}
     >

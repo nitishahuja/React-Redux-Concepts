@@ -21,9 +21,6 @@ function Navbar() {
         <h3>Books</h3>
       </NavLink>
       <h6 onClick={handleClick}>LOGOUT</h6>
-      {/* <button className="btn-logout" onClick={handleClick}>
-        LOGOUT
-      </button> */}
     </nav>
   );
 }

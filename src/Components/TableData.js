@@ -20,10 +20,14 @@ function TableData({ data }) {
   // console.log(data.length);
 
   return (
-    <TableContainer>
+    <TableContainer style={{ width: "90%" }}>
       <Table
         align="center"
-        style={{ margin: "20px", width: "95%", overflow: "hidden" }}
+        style={{
+          margin: "20px",
+          width: "95%",
+          overflow: "hidden",
+        }}
       >
         <TableHead>
           <TableRow>

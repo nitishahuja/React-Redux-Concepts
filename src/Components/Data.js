@@ -12,7 +12,6 @@ function Data({ match }) {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setData(data);
         setDataFetched(true);
       });
@@ -32,9 +31,16 @@ function Data({ match }) {
         <button className="btn-logout" onClick={handleClickForRepo}>
           Check Out Repository
         </button>
+        {/* <Button
+          variant="contained"
+          color="primary"
+          onClick={handleClickForRepo}
+        >
+          Check Out Repository
+        </Button> */}
       </div>
       {dataFetched ? (
-        <table>
+        <table style={{ width: "90%" }}>
           <tbody>
             <tr>
               <td style={{ textTransform: "uppercase", fontWeight: "bolder" }}>
