@@ -65,10 +65,7 @@ function TableData({ data }) {
                 );
               })
             : data
-                .slice(
-                  page + 1 * rowsPerPage,
-                  page + 1 * rowsPerPage + rowsPerPage
-                )
+                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((issue) => {
                   // console.log(issue);
                   return (
@@ -94,7 +91,7 @@ function TableData({ data }) {
                   );
                 })}
           {emptyRows > 0 && (
-            <TableRow style={{ height: 10 * emptyRows }}>
+            <TableRow style={{ height: 5 * emptyRows }}>
               <TableCell colSpan={6} />
             </TableRow>
           )}

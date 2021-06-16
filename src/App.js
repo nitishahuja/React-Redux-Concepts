@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import Issues from "./Issues";
 import Dashboard from "./Dashboard.js";
-import Data from "./Data.js";
+import Data from "./Components/Data.js";
 import Home from "./Home.js";
 import { useSelector, useDispatch } from "react-redux";
 import { authenticated } from "./actions";

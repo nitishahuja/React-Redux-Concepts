@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import TextField from "@material-ui/core/TextField";
 import { sortData } from "./util.js";
 import TableData from "./Components/TableData";
+import { LinearProgress } from "@material-ui/core";
 
 function Issues() {
   const [issues, setIssues] = useState([]);
   const [searchData, setSearchData] = useState("");
+  const [dataFetched, setDataFetched] = useState(false);
 
   const fetchData = () => {
     fetch("https://api.github.com/repos/vmg/redcarpet/issues?")
@@ -13,6 +15,7 @@ function Issues() {
       .then((data) => {
         const sortedData = sortData(data);
         setIssues(sortedData);
+        setDataFetched(true);
       });
   };
 
@@ -53,7 +56,13 @@ function Issues() {
           />
         </form>
       </div>
-      <TableData data={issues} />
+      {dataFetched ? (
+        <TableData data={issues} />
+      ) : (
+        <div className="loading">
+          <LinearProgress />
+        </div>
+      )}
     </div>
   );
 }
