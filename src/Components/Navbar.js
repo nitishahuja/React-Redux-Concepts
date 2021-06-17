@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import { nonAuthenticated } from "./../actions/index.js";
 
 function Navbar() {
@@ -20,7 +21,10 @@ function Navbar() {
       <NavLink to="/books" activeClassName="active">
         <h3>Books</h3>
       </NavLink>
-      <h6 onClick={handleClick}>LOGOUT</h6>
+      {/* <PersonIcon /> */}
+      <h6 onClick={handleClick}>
+        <ExitToAppIcon />
+      </h6>
     </nav>
   );
 }

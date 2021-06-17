@@ -5,7 +5,6 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-import Issues from "./Issues";
 import Dashboard from "./Dashboard.js";
 import Data from "./Components/Data.js";
 import Home from "./Home.js";
@@ -38,11 +37,8 @@ function App() {
           <Route path="/dashboard">
             {isLogged ? <Dashboard /> : <Redirect to="/" />}
           </Route>
-          <Route path="/issues" component={Issues}>
-            {isLogged ? <Issues /> : <Redirect to="/" />}
-          </Route>
           <Route path="/books" component={Books}>
-            {isLogged ? <Books /> : <Redirect to="/" />}
+            {isLogged ? <Books /> : <Redirect to="/dashboard" />}
           </Route>
           <Route path="/data/:number" component={Data}>
             <Redirect to="/" />

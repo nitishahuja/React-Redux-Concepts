@@ -4,17 +4,22 @@
 }
 
 body {
-  background: rgb(247, 243, 243);
+  background: rgb(255, 255, 255);
+  width: 100%;
 }
 
 .MuiContainer-root {
   background-color: white;
   width: 80% !important;
-  height: 80%;
+  /* height: 80%; */
   border-radius: 5px;
   border: 1px solid black;
   align-items: center;
-  margin-bottom: auto;
+  /* margin-bottom: 10px; */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .MuiContainer-root .MuiButton-fullWidth {
   margin-top: 10px;
@@ -26,78 +31,28 @@ body {
   text-transform: capitalize;
 }
 
+.dashboard {
+  width: 100%;
+}
+
 .data {
   align-content: center;
 }
 
-.form {
-  display: flex;
-  flex-direction: column;
-  background: rgb(250, 250, 250);
-  max-width: 450px;
-  margin: auto;
-  margin-bottom: 4rem;
-  padding: 40px;
-  border-radius: 5px;
-  border: 1px solid black;
-}
-.form h1 {
-  letter-spacing: 0.2rem;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-}
-.form h2 {
-  position: relative;
-}
-
-.form input {
-  background: hsl(210, 36%, 96%);
-  border-color: transparent;
-  border-radius: 0.25rem;
-  border: 1px solid black;
-  margin: 5px;
-  font-weight: bolder;
-  font-size: larger;
-  padding: 0.25rem 0.5rem;
-}
-
-.btn {
-  display: inline-block;
-  background: hsl(205, 78%, 60%);
-  color: white;
-  padding: 0.25rem 0.75rem;
-  border-radius: 0.25rem;
-  border: 1px solid black;
-  border-color: transparent;
-  text-transform: capitalize;
-  font-size: larger;
-  font-weight: bolder;
-  letter-spacing: 0.01rem;
-  margin-top: 2rem;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  cursor: pointer;
-  transition: all 0.3s linear;
-}
-.btn:hover {
-  background: darkblue;
-  color: white;
-}
-
 .App {
   text-align: center;
-  padding: 20px;
+  /* padding: 20px; */
 }
 
 .data table {
-  width: 90%;
+  width: 95% !important;
   margin: 10px auto;
   border-radius: 10px;
   border: 1px solid black;
-  padding: 10px;
+  /* padding: 10px; */
   background: #f3f2f8;
   overflow: scroll;
-  height: 400px;
+  /* height: 400px; */
   color: #000000;
 }
 table tr {
@@ -128,38 +83,19 @@ table tr:nth-of-type(even) {
   letter-spacing: 0.01rem;
 }
 
-.item {
-  background: white;
-  display: flex;
-  justify-content: space-around;
-  max-width: var(--fixed-width);
-  margin: 2rem auto;
-  align-items: center;
-  border-radius: var(--radius);
-  padding: 1rem 2rem;
-}
-
 .tableBody {
   color: white;
 }
 
-.container--1 {
-  width: 90%;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 .container--3 {
-  width: 100%;
+  width: 95%;
   margin: auto;
+  background-color: transparent !important;
 }
 
-.container--1 h2,
-.container--1 h4 {
-  color: coral;
-  letter-spacing: 0.2rem;
+.container--3 h2 {
+  font-family: sans-serif;
+  font-weight: bolder;
 }
 
 .container--2 a {
@@ -170,6 +106,10 @@ table tr:nth-of-type(even) {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
+.container--2 a:hover {
+  opacity: 0.8;
+}
+
 .active {
   opacity: 1 !important;
 }
@@ -177,58 +117,61 @@ table tr:nth-of-type(even) {
 .container--3 .header {
   margin-top: 10px;
   display: flex;
-  width: 90%;
-  margin: auto;
-  padding: 10px;
+  /* flex-direction: row-reverse; */
   justify-content: space-between;
+  width: 95%;
+  margin: auto;
+  /* padding: 10px; */
   align-items: center;
   letter-spacing: 0.2rem;
 }
 
-/* .container--3 input {
-  border-radius: 8px;
-  border: 1px solid black;
-  padding: 5px;
-} */
-
 .container--2 {
-  background-color: teal;
+  background-color: rgb(0, 0, 0);
   display: flex;
-  width: 90%;
+  height: 8vh;
   justify-content: space-between;
-  margin: auto;
-  border-radius: 5px;
+  /* margin: auto; */
+  /* padding: 10px; */
+  /* border-radius: 5px; */
   align-items: center;
-  padding: 20px 0;
+  padding: 20px;
 }
 
 .container--2 h1 {
-  margin-left: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   letter-spacing: 0.2rem;
   font-size: xx-large;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
-.container--2 h6 {
+.container--2 .MuiSvgIcon-root {
   cursor: pointer;
-  margin-right: 10px;
+  opacity: 0.5;
   color: rgb(255, 255, 255) !important;
   border-radius: 0.25rem;
   color: black;
 }
 
+.container--2 .MuiSvgIcon-root:hover {
+  opacity: 1;
+}
+
 .container--3 .MuiTableContainer-root {
-  width: 90%;
+  width: 95% !important;
   padding: 10px 0px 10px 0;
+  height: 70vh;
   margin: auto;
+  padding: 10px;
   border-radius: 10px;
   border: 1px solid black;
-  background: #e6e6e6;
+  background: white;
 }
 
 .MuiTableContainer-root .MuiTable-root {
   margin: auto !important;
-  height: 60vh;
+  height: 62vh;
   background-color: transparent;
 }
 
@@ -239,7 +182,7 @@ table tr:nth-of-type(even) {
 .data .header {
   margin: auto;
   display: flex;
-  width: 90%;
+  width: 95%;
   justify-content: space-between;
   align-items: center;
   margin-top: 10px;
@@ -248,28 +191,35 @@ table tr:nth-of-type(even) {
 .data .header button {
   padding: 5px;
   border-radius: 5px;
-  background-color: cornflowerblue;
-  color: white;
+  background-color: #e5e3ee;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.data .header .svg-inline--fa.fa-lg {
+  color: black;
 }
 
 .bookList {
   display: flex;
   flex-direction: column;
-  width: 90%;
+  width: 95%;
   margin: auto;
   /* padding: 20px; */
 }
 
 .bookList .book {
+  cursor: all-scroll;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: 100% !important;
   margin-top: 20px;
   background-color: white;
   border-radius: 5px;
   border: 1px solid black;
-  height: 20vh;
+  height: 25vh;
 }
 
 .bookList .book .book_right {
@@ -280,14 +230,14 @@ table tr:nth-of-type(even) {
 }
 
 .bookList .book .book_right img {
-  height: 18vh;
+  height: 23vh;
   margin-left: 20px;
 }
 
 .bookList .book h2,
 .bookList .book .h5 {
   margin-right: 20px;
-  text-align: right;
+  text-align: center;
 }
 
 .bookList .book .book_left button {
@@ -305,10 +255,31 @@ table tr:nth-of-type(even) {
 }
 
 .loading {
-  width: 50%;
+  width: 80%;
   margin: auto;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 600px) {
+  .container--2 h1 {
+    font-size: large;
+  }
+  .bookList .book h3 {
+    font-size: medium;
+  }
+  .bookList .book .book_left button {
+    padding: 2px;
+    font-size: 0.4rem;
+    margin-right: 0.1rem;
+  }
+  .bookList .book .book_right img {
+    height: 23vh;
+    margin-left: 0.1rem;
+  }
+  .data table {
+    font-size: xx-small;
+  }
 }

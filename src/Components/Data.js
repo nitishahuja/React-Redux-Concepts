@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { LinearProgress, CircularProgress } from "@material-ui/core";
+import { CircularProgress } from "@material-ui/core";
+import Skeleton from "@material-ui/lab/Skeleton";
 import { Link } from "react-router-dom";
 function Data({ match }) {
   const [data, setData] = useState({});
@@ -27,20 +28,12 @@ function Data({ match }) {
         <Link to="/dashboard">
           <FontAwesomeIcon size="lg" icon={faArrowLeft} />
         </Link>
-        <h2>Issue Data</h2>
         <button className="btn-logout" onClick={handleClickForRepo}>
           Check Out Repository
         </button>
-        {/* <Button
-          variant="contained"
-          color="primary"
-          onClick={handleClickForRepo}
-        >
-          Check Out Repository
-        </Button> */}
       </div>
       {dataFetched ? (
-        <table style={{ width: "90%" }}>
+        <table>
           <tbody>
             <tr>
               <td style={{ textTransform: "uppercase", fontWeight: "bolder" }}>
@@ -98,7 +91,7 @@ function Data({ match }) {
         </table>
       ) : (
         <div className="loading">
-          <LinearProgress />
+          <Skeleton /> <Skeleton /> <Skeleton />
         </div>
       )}
     </div>

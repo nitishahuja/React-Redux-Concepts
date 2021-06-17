@@ -13,6 +13,7 @@ function TableData({ data }) {
   const rowsPerPage = 5;
   const emptyRows =
     rowsPerPage - Math.min(rowsPerPage, data.length - page * rowsPerPage);
+  const [open, setOpen] = React.useState(false);
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -20,7 +21,9 @@ function TableData({ data }) {
   // console.log(data.length);
 
   return (
-    <TableContainer style={{ width: "90%" }}>
+    <TableContainer
+      style={{ boxShadow: "0px 0px 15px 0px", marginTop: "15px" }}
+    >
       <Table
         align="center"
         style={{
@@ -45,7 +48,6 @@ function TableData({ data }) {
         <TableBody>
           {data.length === 1
             ? data.map((issue) => {
-                // console.log(issue);
                 return (
                   <TableRow
                     component={Link}
@@ -71,7 +73,6 @@ function TableData({ data }) {
             : data
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((issue) => {
-                  // console.log(issue);
                   return (
                     <TableRow
                       component={Link}
@@ -95,7 +96,7 @@ function TableData({ data }) {
                   );
                 })}
           {emptyRows > 0 && (
-            <TableRow style={{ height: 5 * emptyRows }}>
+            <TableRow style={{ height: 53 * emptyRows }}>
               <TableCell colSpan={6} />
             </TableRow>
           )}

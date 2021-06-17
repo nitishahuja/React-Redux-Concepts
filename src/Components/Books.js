@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { books } from "./../assets/bookData";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
-import DragHandleIcon from "@material-ui/icons/DragHandle";
 function Books() {
   const [bookList, setBookList] = useState(books);
 
@@ -39,14 +38,14 @@ function Books() {
                         boxShadow: snapshot.isDragging
                           ? "0 0 .5rem #666"
                           : "none",
+                        cursor: "all-scroll",
                       }}
                     >
                       <div className="book_right">
-                        <DragHandleIcon />
                         <img src={book.img} alt="bookCover" />
                       </div>
                       <div className="book_center">
-                        <h2>{book.name}</h2>
+                        <h3>{book.name}</h3>
                         <h5>By {book.auther}</h5>
                       </div>
                       <div className="book_left">
